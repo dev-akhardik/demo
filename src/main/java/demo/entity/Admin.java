@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class User {
+public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,6 +14,8 @@ public class User {
     private String name;
     private String email;
     private String password;
+
+    // private String role;
 
     public String getPassword() {
         return password;
@@ -27,7 +29,7 @@ public class User {
         this.password = password;
     }
 
-    public User() {
+    public Admin() {
 
     }
 
@@ -48,4 +50,11 @@ public class User {
         this.name = name;
     }
 
+    // public Set<Product> getWishlist() {
+    // return wishlist;
+    // }
+
+    public void setWishlist(Set<Product> wishlist) {
+        this.wishlist = wishlist;
+    }
 }

@@ -5,10 +5,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import demo.entity.Product;
-import demo.entity.User;
+import demo.entity.Admin;
 import demo.entity.WishlistEntity;
 import demo.respository.ProductRepository;
-import demo.respository.UserRepository;
+import demo.respository.AdminRepository;
 import demo.respository.WishlistRepository;
 
 import java.util.List;
@@ -23,14 +23,14 @@ public class WishlistController {
     private WishlistRepository wishlistRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private AdminRepository userRepository;
 
     @Autowired
     private ProductRepository productRepository;
 
     @PostMapping("/add")
     public ResponseEntity<String> addToWishlist(@RequestParam Long userId, @RequestParam Long productId) {
-        User user = userRepository.findById(userId)
+        Admin user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new RuntimeException("Product not found"));

@@ -9,7 +9,7 @@ public class WishlistEntity {
     private Long id;
 
     @ManyToOne
-    private User user;
+    private Admin user;
 
     @ManyToOne
     private Product product;
@@ -17,7 +17,7 @@ public class WishlistEntity {
     public WishlistEntity() {
     }
 
-    public WishlistEntity(User user, Product product) {
+    public WishlistEntity(Admin user, Product product) {
         this.user = user;
         this.product = product;
     }
@@ -27,11 +27,11 @@ public class WishlistEntity {
         return id;
     }
 
-    public User getUser() {
+    public Admin getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Admin user) {
         this.user = user;
     }
 

@@ -11,7 +11,7 @@ import jakarta.persistence.GenerationType;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    // @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @JsonIgnore
     private Long id;
 

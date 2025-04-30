@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.*;
 import demo.entity.Customer;
 import demo.respository.CustomerRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("/customer")
 
 public class CustomerController {
     @Autowired
@@ -19,10 +20,8 @@ public class CustomerController {
     // POST method to save a new user
     @PostMapping
     public ResponseEntity<String> createCustomer(@RequestBody Customer customer) {
-
         // Save the user to the database
         customerRepository.save(customer);
-
         return ResponseEntity.ok("Customer created successfully");
 
     }
@@ -36,6 +35,12 @@ public class CustomerController {
         } else {
             throw new RuntimeException("Customer not found with id " + id);
         }
+    }
+
+    // GET method to fetch all admins
+    @GetMapping
+    public List<Customer> getAllcustomers() {
+        return customerRepository.findAll();
     }
 
     // PUT method to update an existing user

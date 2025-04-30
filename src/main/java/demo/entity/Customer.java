@@ -1,4 +1,5 @@
-package demo;
+package demo.entity;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
@@ -19,7 +20,7 @@ public class Customer {
     private String phone_no;
     private String address;
 
-    public Customer(){
+    public Customer() {
 
     }
 

@@ -1,18 +1,19 @@
-package demo;
+package demo.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import demo.entity.Product;
+import demo.respository.ProductRepository;
 
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/product")
 public class ProductController {
     @Autowired
     private ProductRepository productRepository;
-
-
 
     // POST method to save a new user
     @PostMapping
@@ -24,6 +25,7 @@ public class ProductController {
         return ResponseEntity.ok("Product created successfully");
 
     }
+
     // GET method to read a user by id
     @GetMapping("/{id}")
     public Product geProduct(@PathVariable Long id) {

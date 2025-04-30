@@ -1,4 +1,4 @@
-package demo;
+package demo.entity;
 
 import jakarta.persistence.*;
 
@@ -14,7 +14,8 @@ public class WishlistEntity {
     @ManyToOne
     private Product product;
 
-    public WishlistEntity() {}
+    public WishlistEntity() {
+    }
 
     public WishlistEntity(User user, Product product) {
         this.user = user;
@@ -29,6 +30,7 @@ public class WishlistEntity {
     public User getUser() {
         return user;
     }
+
     public void setUser(User user) {
         this.user = user;
     }
@@ -36,6 +38,7 @@ public class WishlistEntity {
     public Product getProduct() {
         return product;
     }
+
     public void setProduct(Product product) {
         this.product = product;
     }

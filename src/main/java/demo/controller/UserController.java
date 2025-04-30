@@ -1,22 +1,21 @@
-package demo;
+package demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import demo.entity.User;
+import demo.respository.UserRepository;
+
 import java.util.List;
 import java.util.Optional;
-
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
-
     @Autowired
     private UserRepository userRepository;
-
-
 
     // POST method to save a new user
     @PostMapping
@@ -28,7 +27,6 @@ public class UserController {
         return ResponseEntity.ok("User created successfully");
 
     }
-
 
     // GET method to read a user by id
     @GetMapping("/{id}")
@@ -72,7 +70,5 @@ public class UserController {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
-
-
 
 }

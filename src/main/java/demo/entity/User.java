@@ -1,4 +1,5 @@
-package demo;
+package demo.entity;
+
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -17,12 +18,9 @@ public class User {
     public String getPassword() {
         return password;
     }
+
     @ManyToMany
-    @JoinTable(
-            name = "user_wishlist",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
+    @JoinTable(name = "user_wishlist", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
     private Set<Product> wishlist = new HashSet<>();
 
     public void setPassword(String password) {
@@ -33,7 +31,6 @@ public class User {
 
     }
 
-
     public String getEmail() {
         return email;
     }
@@ -41,8 +38,7 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-// getters and sett
-
+    // getters and sett
 
     public String getName() {
         return name;
@@ -51,7 +47,5 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-
-
 
 }

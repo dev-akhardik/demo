@@ -1,12 +1,19 @@
-package demo;
+package demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import demo.entity.Product;
+import demo.entity.User;
+import demo.entity.WishlistEntity;
+import demo.respository.ProductRepository;
+import demo.respository.UserRepository;
+import demo.respository.WishlistRepository;
+
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+// import java.util.Optional;
+// import java.util.Set;
 
 @RestController
 @RequestMapping("/wishlist")
@@ -44,5 +51,3 @@ public class WishlistController {
         return ResponseEntity.ok("Wishlist item removed");
     }
 }
-
-
